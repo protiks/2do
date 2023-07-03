@@ -1,47 +1,23 @@
 import { useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import List from './List';
 import useQueries from '../../utils/useQueries';
 import Input from './Input';
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
+import TabPanel from './TabPanel';
 
-interface TabPanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-}
 
-function TabPanel(props: TabPanelProps) {
-    const { children, value, index, ...other } = props;
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-function a11yProps(index: number) {
+const a11yProps = (index: number) => {
     return {
         id: `simple-tab-${index}`,
         'aria-controls': `simple-tabpanel-${index}`,
     };
 }
 
-export default function BasicTabs() {
+const BasicTabs = () => {
     const { data } = useQueries()
     const [value, setValue] = useState(0);
 
@@ -93,3 +69,5 @@ export default function BasicTabs() {
         </Grid >
     );
 }
+
+export default BasicTabs 

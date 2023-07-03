@@ -23,10 +23,6 @@ const Input = () => {
             <Box m={'auto'} >
                 <Button sx={{
                     minHeight: 55,
-                    // ":hover": {
-                    //     boxShadow: 2,
-
-                    // }
                 }} variant="text" onClick={handleCreateTodo}><AddBoxTwoToneIcon /></Button>
             </Box>
         </Box >
