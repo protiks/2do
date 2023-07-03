@@ -18,7 +18,7 @@ const useQueries = () => {
         }
     );
     const { mutate: updateItem } = useMutation(
-        (data: { id: string; title: string, complete?: boolean }) =>
+        (data: { id: string; title: string, complete: boolean }) =>
             updateTodo(data),
         {
             onSuccess: () => { queryClient.invalidateQueries(['todos']); }

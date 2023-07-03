@@ -39,17 +39,18 @@ const Item: React.FC<Props> = ({ id, title, complete }) => {
     }, [updatedTitle, checked]);
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row' }} key={id}>
             <TextField
-                sx={{}}
-                id="item"
+                sx={{ marginRight: 2 }}
+                id={id}
                 type="text"
                 value={updatedTitle}
                 onChange={handleInputChange}
             />
-            <Checkbox checked={checked} onChange={handleCheckBox} />
-            {/* <Button variant="text" onClick={handleUpdate}>Update</Button> */}
-            <Button variant="text" onClick={handleDelete}><HighlightOffTwoToneIcon /></Button>
+            <Box m={'auto'}>
+                <Checkbox checked={checked} onChange={handleCheckBox} />
+                <Button variant="text" onClick={handleDelete}><HighlightOffTwoToneIcon /></Button>
+            </Box>
         </Box>
     );
 };

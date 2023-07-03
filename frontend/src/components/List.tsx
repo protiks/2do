@@ -14,14 +14,16 @@ type Props = {
 const List: React.FC<Props> = ({ todos }) => {
     console.log(todos)
     return (
-        <Box>
+        <Box sx={{}}>
             {todos.map((todo) => (
-                <Item
-                    key={todo.id}
-                    id={todo.id}
-                    title={todo.title}
-                    complete={todo.complete}
-                />
+                <Box m={2}>
+                    <Item
+                        key={todo.id}
+                        id={todo.id}
+                        title={todo.title}
+                        complete={todo.complete}
+                    />
+                </Box>
             ))}
         </Box>
     );

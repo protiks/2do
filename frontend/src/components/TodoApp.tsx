@@ -1,12 +1,12 @@
 import useQueries from "../../utils/useQueries"
 import Input from "./Input"
 import List from "./List"
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Container, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import BasicTabs from "./Tabs"
 
 
 const ToDoApp = () => {
-    const { data, status } = useQueries()
-    console.log(data)
+    const { status, data } = useQueries()
 
     if (status === 'loading') {
         return (
@@ -15,9 +15,14 @@ const ToDoApp = () => {
     }
 
     return (
-        <Box sx={{ backgroundColor: 'lightblue' }}>
-            <Input />
-            <List todos={data} />
+        <Box sx={{
+        }}>
+            <Grid
+                container
+                justifyContent="center"
+            >
+                <BasicTabs />
+            </Grid>
         </Box>
     )
 }
