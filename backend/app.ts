@@ -7,7 +7,6 @@ const app = express();
 
 app.use(express.json());
 app.use((req, res, next) => {
-	// res.setHeader('Content-Type', 'application/json');
 	res.setHeader('Access-Control-Allow-Credentials', 'true');
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
