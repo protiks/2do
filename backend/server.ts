@@ -1,4 +1,3 @@
-// import app from './app';
 import app_v2 from './app_v2';
 import process from 'process';
 
